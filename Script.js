@@ -4,6 +4,8 @@ const resultOutput = document.querySelector("#result");
 const keuzeButtons = document.querySelectorAll("button[data-keuze]");
 const scoreJij = document.querySelector("#score-jij");
 const scoreComputer = document.querySelector("#score-computer");
+const winOverlay = document.getElementById("win-overlay");
+const winAudio = document.getElementById("win-audio");
 
 const keuzes = ["Steen", "Papier", "Schaar"];
 let jijScore = 0;
@@ -38,6 +40,17 @@ function verwerkKeuze(e) {
   resultOutput.textContent = uitslag;
   scoreJij.textContent = jijScore;
   scoreComputer.textContent = computerScore;
+
+  
+  if (uitslag === "Jij wint!") {
+    winOverlay.style.display = "flex";
+    winAudio.currentTime = 0;
+    winAudio.play();
+    setTimeout(() => {
+      winOverlay.style.display = "none";
+      winAudio.pause();
+    }, 1500);
+  }
 
   resultOutput.style.opacity = 0;
   setTimeout(() => {

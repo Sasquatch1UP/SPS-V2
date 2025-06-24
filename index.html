@@ -108,6 +108,27 @@
 
   <button class="reset-knop" onclick="location.reload()">🔁 Reset spel</button>
 
+  <div id="win-overlay"
+     style="display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;">
+  
+  <img src="Clashg.gif"
+       alt="Win GIF"
+       style="max-width: 90vw;
+              max-height: 90vh;">
+</div>
+
+  </div>
+  <audio id="win-audio" src="clash.mp3"></audio>
+
   <script src="script.js"></script>
 </body>
 </html>
