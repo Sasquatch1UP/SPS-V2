@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Steen Papier Schaar V2</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #00ffff;
+    }
+
+    .resultaat {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      min-height: 2rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .score {
+      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+
+    .keuze-buttons {
+      margin-top: 30px;
+    }
+
+    button[data-keuze] {
+      margin: 10px;
+      padding: 20px 30px;
+      font-size: 1.5rem;
+      background-color: #1e1e1e;
+      color: #fff;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button[data-keuze]:hover {
+      background-color: #00ffff;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    .reset-knop {
+      margin-top: 40px;
+      padding: 12px 25px;
+      background: transparent;
+      color: #00ffff;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .reset-knop:hover {
+      background-color: #00ffff;
+      color: #000;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      button[data-keuze] {
+        width: 90%;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🪨 Steen | 📄 Papier | ✂️ Schaar</h1>
+
+  <div class="label">Computer: <span id="computer">-</span></div>
+  <div class="label">Jouw keuze: <span id="human">-</span></div>
+  <div class="resultaat"><span id="result">Maak je keuze...</span></div>
+
+  <div class="keuze-buttons">
+    <button data-keuze="Steen">🪨</button>
+    <button data-keuze="Papier">📄</button>
+    <button data-keuze="Schaar">✂️</button>
+  </div>
+
+  <div class="score">
+    Jij: <span id="score-jij">0</span> – Computer: <span id="score-computer">0</span>
+  </div>
+
+  <button class="reset-knop" onclick="location.reload()">🔁 Reset spel</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
